@@ -1,12 +1,4 @@
 """
-GET /smile
-"""
-def test_get_smile(web_client):
-    response = web_client.get("/smile")
-    assert response.status_code == 200
-    assert response.data.decode("utf-8") == ":)"
-
-"""
 GET /books
 """
 def test_get_books(db_connection, web_client): # Note web_client fixture, see conftest.py

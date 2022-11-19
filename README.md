@@ -37,12 +37,12 @@ parts of the project work, or you can delete it and start from scratch.
 # Seed the development database (ensure you have run `pipenv shell` first)
 ; python seed_dev_database.py
 
-# Run the tests
-; pytest
+# Run the tests (with extra logging)
+; pytest -sv 
 
 # Run the web server
-; flask --debug run
-# Now visit http://localhost:5000/smile in your browser
+; python app.py
+# Now visit http://localhost:5000/emoji in your browser
 ```
 
 If you would like to remove the example code:

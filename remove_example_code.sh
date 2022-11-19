@@ -19,12 +19,16 @@ rm tests/test_book_repository.py
 rm tests/test_book.py
 rm tests/test_example_routes.py
 rm example_routes.py
+rm seeds/book_store.sql
 
 grep -v book_store seed_dev_database.py > seed_dev_database.py.tmp
 mv seed_dev_database.py.tmp seed_dev_database.py
 
-sed -n "/== Example Code Below ==/q;p" app.py > app.py.tmp
+sed -n -e '/== Example Code Below ==/{' -e ':a' -e 'N' -e '/== End Example Code ==\n/!ba' -e 's/.*//' -e '}' -e 'p' app.py > app.py.tmp
 mv app.py.tmp app.py
+
+sed -n -e '/== Example Code Below ==/{' -e ':a' -e 'N' -e '/== End Example Code ==\n/!ba' -e 's/.*//' -e '}' -e 'p' tests/test_app.py > tests/test_app.py.tmp
+mv tests/test_app.py.tmp tests/test_app.py
 
 rm remove_example_code.sh
 
