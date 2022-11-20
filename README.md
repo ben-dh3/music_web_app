@@ -13,10 +13,10 @@ parts of the project work, or you can delete it and start from scratch.
 
 ```shell
 # Clone the repository to your local machine
-; git clone git@github.com:makersacademy/web-applications-in-python-project-starter.git YOUR_PROJECT_NAME
+; git clone git@github.com:makersacademy/web-applications-in-python-project-starter-plain.git YOUR_PROJECT_NAME
 
 # Or, if you don't have SSH keys set up
-; git clone https://github.com/makersacademy/web-applications-in-python-project-starter.git YOUR_PROJECT_NAME
+; git clone https://github.com/makersacademy/web-applications-in-python-project-starter-plain.git YOUR_PROJECT_NAME
 
 # Enter the directory
 ; cd YOUR_PROJECT_NAME
