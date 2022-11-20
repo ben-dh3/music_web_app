@@ -32,12 +32,12 @@ def apply_example_routes(app):
     # POST /books
     # Creates a new book
     # Try it:
-    #   ; curl -X POST -d "title=Dave&author=Caden%20Lovelace" http://localhost:5000/books
+    #   ; curl -X POST -d "title=Dave&author_name=Caden%20Lovelace" http://localhost:5000/books
     @app.route('/books', methods=['POST'])
     def create_book():
         connection = get_flask_database_connection(app)
         repository = BookRepository(connection)
-        book = Book(None, request.form['title'], request.form['author'])
+        book = Book(None, request.form['title'], request.form['author_name'])
         book = repository.create(book)
         return "Book added successfully"
 

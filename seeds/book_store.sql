@@ -16,8 +16,8 @@ CREATE TABLE books (
 );
 
 -- Finally, we add any records that are needed for the tests to run
-INSERT INTO books (title, author_name) VALUES ('Nineteen Eighty-Four', 'George Orwell');
-INSERT INTO books (title, author_name) VALUES ('Mrs Dalloway', 'Virginia Woolf');
-INSERT INTO books (title, author_name) VALUES ('Emma', 'Jane Austen');
-INSERT INTO books (title, author_name) VALUES ('Dracula', 'Bram Stoker');
-INSERT INTO books (title, author_name) VALUES ('The Age of Innocence', 'Edith Wharton');
+INSERT INTO books (title, author_name) VALUES ('Invisible Cities', 'Italo Calvino');
+INSERT INTO books (title, author_name) VALUES ('The Man Who Was Thursday', 'GK Chesterton');
+INSERT INTO books (title, author_name) VALUES ('Bluets', 'Maggie Nelson');
+INSERT INTO books (title, author_name) VALUES ('No Place on Earth', 'Christa Wolf');
+INSERT INTO books (title, author_name) VALUES ('Nevada', 'Imogen Binnie');

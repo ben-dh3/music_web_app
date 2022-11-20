@@ -13,11 +13,11 @@ def test_get_books(db_connection, web_client): # Note web_client fixture, see co
 
     # We assert that the response data is the same as the string we expect
     assert response.data.decode("utf-8") == "\n".join([
-        "Book(1, Nineteen Eighty-Four, George Orwell)",
-        "Book(2, Mrs Dalloway, Virginia Woolf)",
-        "Book(3, Emma, Jane Austen)",
-        "Book(4, Dracula, Bram Stoker)",
-        "Book(5, The Age of Innocence, Edith Wharton)"
+        "Book(1, Invisible Cities, Italo Calvino)",
+        "Book(2, The Man Who Was Thursday, GK Chesterton)",
+        "Book(3, Bluets, Maggie Nelson)",
+        "Book(4, No Place on Earth, Christa Wolf)",
+        "Book(5, Nevada, Imogen Binnie)"
     ])
 
 """
@@ -30,7 +30,7 @@ def test_get_book(db_connection, web_client):
 
     assert response.status_code == 200
     assert response.data.decode("utf-8") == "" \
-        "Book(1, Nineteen Eighty-Four, George Orwell)"
+        "Book(1, Invisible Cities, Italo Calvino)"
 
 """
 POST /books
@@ -40,7 +40,7 @@ def test_create_book(db_connection, web_client):
 
     response = web_client.post("/books", data={
         "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald"
+        "author_name": "F. Scott Fitzgerald"
     })
 
     assert response.status_code == 200
@@ -50,11 +50,11 @@ def test_create_book(db_connection, web_client):
 
     assert response.status_code == 200
     assert response.data.decode("utf-8") == "\n".join([
-        "Book(1, Nineteen Eighty-Four, George Orwell)\n" +
-        "Book(2, Mrs Dalloway, Virginia Woolf)\n" +
-        "Book(3, Emma, Jane Austen)\n" +
-        "Book(4, Dracula, Bram Stoker)\n" +
-        "Book(5, The Age of Innocence, Edith Wharton)\n" +
+        "Book(1, Invisible Cities, Italo Calvino)\n" +
+        "Book(2, The Man Who Was Thursday, GK Chesterton)\n" +
+        "Book(3, Bluets, Maggie Nelson)\n" +
+        "Book(4, No Place on Earth, Christa Wolf)\n" +
+        "Book(5, Nevada, Imogen Binnie)\n" +
         "Book(6, The Great Gatsby, F. Scott Fitzgerald)"
     ])
 
@@ -73,9 +73,9 @@ def test_delete_book(db_connection, web_client):
 
     assert response.status_code == 200
     assert response.data.decode("utf-8") == "\n".join([
-        "Book(2, Mrs Dalloway, Virginia Woolf)\n" +
-        "Book(3, Emma, Jane Austen)\n" +
-        "Book(4, Dracula, Bram Stoker)\n" +
-        "Book(5, The Age of Innocence, Edith Wharton)"
+        "Book(2, The Man Who Was Thursday, GK Chesterton)\n" +
+        "Book(3, Bluets, Maggie Nelson)\n" +
+        "Book(4, No Place on Earth, Christa Wolf)\n" +
+        "Book(5, Nevada, Imogen Binnie)"
     ])
 
