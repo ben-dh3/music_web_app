@@ -6,7 +6,10 @@ projects.
 It contains quite a lot of example code. You can use this to see how the various
 parts of the project work, or you can delete it and start from scratch.
 
-<!-- OMITTED -->
+There are two videos to support:
+
+* [A demonstration of setting up the project](https://www.youtube.com/watch?v=72JwLuAyHyM&t=360s)
+* [A walkthrough of the project codebase](https://www.youtube.com/watch?v=72JwLuAyHyM&t=735s) 
 
 
 ## Setup
