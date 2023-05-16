@@ -40,7 +40,7 @@ class DatabaseConnection:
 
     # This method executes an SQL query on the database.
     # It allows you to set some parameters too. You'll learn about this later.
-    def execute(self, query, params=None):
+    def execute(self, query, params=[]):
         self._check_connection()
         with self.connection.cursor() as cursor:
             cursor.execute(query, params)
@@ -69,7 +69,7 @@ class DatabaseConnection:
         else:
             return self.DEV_DATABASE_NAME
 
-# This function integrates with Flask to create one databse connection that
+# This function integrates with Flask to create one database connection that
 # Flask request can use. To see how to use it, look at example_routes.py
 def get_flask_database_connection(app):
     if not hasattr(g, 'flask_database_connection'):
