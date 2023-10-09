@@ -11,7 +11,7 @@ app = Flask(__name__)
 # GET /emoji
 # Returns a emojiy face
 # Try it:
-#   ; curl http://localhost:5000/emoji
+#   ; curl http://127.0.0.1:5001/emoji
 @app.route('/emoji', methods=['GET'])
 def get_emoji():
     return ":)"
@@ -27,5 +27,5 @@ apply_example_routes(app)
 # They also start the server configured to use the test database
 # if started in test mode.
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True, port=int(os.environ.get('PORT', 5001)))
 

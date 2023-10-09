@@ -8,7 +8,7 @@ def apply_example_routes(app):
     # GET /books
     # Returns a list of books
     # Try it:
-    #   ; curl http://localhost:5000/books
+    #   ; curl http://localhost:5001/books
     @app.route('/books', methods=['GET'])
     def get_books():
         connection = get_flask_database_connection(app)
@@ -21,7 +21,7 @@ def apply_example_routes(app):
     # GET /books/<id>
     # Returns a single book
     # Try it:
-    #   ; curl http://localhost:5000/books/1
+    #   ; curl http://localhost:5001/books/1
     @app.route('/books/<int:id>', methods=['GET'])
     def get_book(id):
         connection = get_flask_database_connection(app)
@@ -32,7 +32,7 @@ def apply_example_routes(app):
     # POST /books
     # Creates a new book
     # Try it:
-    #   ; curl -X POST -d "title=Dave&author_name=Caden%20Lovelace" http://localhost:5000/books
+    #   ; curl -X POST -d "title=Dave&author_name=Caden%20Lovelace" http://localhost:5001/books
     @app.route('/books', methods=['POST'])
     def create_book():
         connection = get_flask_database_connection(app)
@@ -45,7 +45,7 @@ def apply_example_routes(app):
     # DELETE /books/<id>
     # Deletes a book
     # Try it:
-    #   ; curl -X DELETE http://localhost:5000/books/1
+    #   ; curl -X DELETE http://localhost:5001/books/1
     @app.route('/books/<int:id>', methods=['DELETE'])
     def delete_book(id):
         connection = get_flask_database_connection(app)
