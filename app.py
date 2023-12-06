@@ -1,11 +1,54 @@
 import os
+from lib.database_connection import get_flask_database_connection
 from flask import Flask, request
+from lib.album_repository import *
+from lib.album import *
+from lib.artist_repository import *
+from lib.artist import *
 
 # Create a new Flask app
 app = Flask(__name__)
 
 # == Your Routes Here ==
 
+@app.route('/albums', methods=['GET'])
+def get_albums():
+    connection = get_flask_database_connection(app)
+    repository = AlbumRepository(connection)
+    albums = repository.all()
+
+    return "\n".join(
+        f"{album}" for album in albums
+    )
+
+@app.route('/albums', methods=['POST'])
+def post_albums():
+    connection = get_flask_database_connection(app)
+    repository = AlbumRepository(connection)
+    title = request.form['title']
+    release_year = request.form['release_year']
+    artist_id = request.form['artist_id']
+    repository.create(Album(None, title, release_year, artist_id))
+
+    return ''
+
+@app.route('/artists', methods=['GET'])
+def get_artists():
+    connection = get_flask_database_connection(app)
+    repository = ArtistRepository(connection)
+    artists = repository.all()
+    return "\n".join(
+        f"{artist.name}" for artist in artists
+    )
+
+@app.route('/artists', methods=['POST'])
+def post_artists():
+    connection = get_flask_database_connection(app)
+    repository = ArtistRepository(connection)
+    name = request.form['name']
+    genre = request.form['genre']
+    repository.create(Artist(None, name, genre))
+    return ''
 # == Example Code Below ==
 
 # GET /emoji
