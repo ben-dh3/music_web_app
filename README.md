@@ -1,3 +1,6 @@
+# Makers Course Content
+Flask project that interacts with a database. We covered POST and GET methods for routes, and learned to construct a query string with curl.
+
 # Flask Web & Database Project Starter
 
 This is a starter project for you to use to start your Flask web & database
